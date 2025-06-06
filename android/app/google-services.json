@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "120252309377",
+    "project_id": "vehicle-manager-73a2e",
+    "storage_bucket": "vehicle-manager-73a2e.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:120252309377:android:5525a48fb34e318ea55280",
+        "android_client_info": {
+          "package_name": "com.example.vehicle_manager"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCtXlX_JikI6d_Rj0G8leMPeRYlz75Y_RI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
