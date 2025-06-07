@@ -1,5 +1,5 @@
 import 'package:url_launcher/url_launcher.dart';
-import '../vehicle.dart';
+import '../models/vehicle.dart';
 
 Future<void> sendVehicleQuoteEmail(Vehicle v) async {
   final subject = Uri.encodeComponent("Cotización de vehículo ${v.brand} ${v.name}");
