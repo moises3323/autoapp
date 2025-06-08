@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import '../models/vehicle.dart';
 import '../utils/email_utils.dart';
 
-
 // Reusable vehicle form modal for add/edit
 void showVehicleFormModal({
   required BuildContext context,
@@ -23,6 +22,11 @@ void showVehicleFormModal({
   final descriptionController = TextEditingController(
     text: vehicle?.description ?? '',
   );
+  final defaultBrands = ['Toyota', 'Honda', 'Tesla', 'Ford', 'BMW'];
+  final combinedBrands = {
+    ...{for (var b in defaultBrands) b: true},
+    ...{for (var b in brands) b: true},
+  }.keys.toList();
   String selectedBrand =
       vehicle?.brand ?? (brands.isNotEmpty ? brands.first : '');
 
@@ -60,10 +64,7 @@ void showVehicleFormModal({
                       TextButton(
                         onPressed: () {
                           final newVehicle = Vehicle(
-                            id:
-                                vehicle?.id ??
-                                DateTime.now().millisecondsSinceEpoch
-                                    .toString(),
+                            id_auto: vehicle?.id_auto ?? 0,
                             name: nameController.text.trim(),
                             brand: selectedBrand,
                             model: modelController.text.trim(),
@@ -98,7 +99,7 @@ void showVehicleFormModal({
                               ? selectedBrand
                               : null,
                           decoration: const InputDecoration(labelText: 'Marca'),
-                          items: brands.map((brand) {
+                          items: combinedBrands.map((brand) {
                             return DropdownMenuItem(
                               value: brand,
                               child: Text(brand),
